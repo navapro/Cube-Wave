@@ -1,4 +1,5 @@
 let angle = 0;
+let w = 25;
 
 function setup(){
   createCanvas(400,400);
@@ -9,10 +10,13 @@ function draw(){
   translate(width/2, height/2);
   rectMode(CENTER);
 
-  for (let x = 0; x< width; x+=10){
-    let h = map(sin(angle), -1,1,0,100);
+  let offset = 0;
+  for (let x = 0; x< width; x+=w){
+    let a = angle +offset;
+    let h = map(sin(a), -1,1,0,100);
     fill(255);
-    rect(x-width/2,0,9,h);
+    rect(x-width/2 +w,0,w-2,h);
+    offset += 0.1;
   }
   angle+= 0.1;
 }
