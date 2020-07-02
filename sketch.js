@@ -2,12 +2,12 @@ let angle = 0;
 let w = 25;
 
 function setup(){
-  createCanvas(400,400);
+  createCanvas(400,400,WEBGL);
 }
 
 function draw(){
   background(0)
-  translate(width/2, height/2);
+  
   rectMode(CENTER);
 
   let offset = 0;
